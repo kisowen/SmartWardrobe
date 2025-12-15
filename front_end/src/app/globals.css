@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+  }
+}
+ 
+@layer base {
+  * {
+    /* 修复点：将 @apply border-border 替换为标准 CSS 写法 */
+    border-color: hsl(var(--border)); 
+  }
+  body {
+    @apply bg-black text-foreground;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 黑色系滚动条样式（替换之前的代码） */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* 保持原宽度 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #222; /* 滚动条轨道：纯黑底色 */
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #333; /* 滚动条滑块：深灰黑 */
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* 滑块hover：稍浅的黑灰 */
+}
+
+/* Firefox兼容 */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #222; /* 滑块颜色 轨道颜色 */
+}
