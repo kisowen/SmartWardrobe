@@ -1,2 +1,3 @@
 # SmartWardrobe
 一个使用大模型辅助开发的基于天气的穿搭推荐系统
+使用前请安装requirements.txt中的依赖文件
